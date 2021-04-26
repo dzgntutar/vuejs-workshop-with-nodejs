@@ -1,17 +1,26 @@
 const expreess = require("express")
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 const app = expreess()
-const port = 3000
+const port = process.env.port || 3000
+
+let { TodoList } =  require("./data") 
 
 app.get("/",(request,response) => {
     response.status(200).send({
-        name:"Düzgün Tutar"
+        TodoList
     })
 })
 
 
 app.listen(port,() => {
-    console.log("app başarılı bir şekilde ayağa kalktı")
+    //console.log(process);
+    console.log(`app başarılı bir şekilde ayağa kalktı. Port ${port}`)
 })
 
 
