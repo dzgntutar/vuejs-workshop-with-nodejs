@@ -1,5 +1,11 @@
-
+const { uid } = require("uid");
 
 module.exports = {
-    TodoList : []
+  todoList: [
+    {
+      id: uid(),
+      title: "Görev 1",
+      content: "İçerik 1",
+    },
+  ],
 };
