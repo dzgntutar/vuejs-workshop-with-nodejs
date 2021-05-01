@@ -21,6 +21,7 @@ app.get("/", (request, response) => {
 
 app.post("/todo", (request, response) => {
   if (request.body.todo) {
+    
       let todo = request.body.todo;
       todo.id = uid();
 
