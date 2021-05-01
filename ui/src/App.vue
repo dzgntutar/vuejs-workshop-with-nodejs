@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <button class="btn-primary">Tıkla</button>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="container">
+    <div class="">
+      <nav class="d-flex justify-content-center">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </nav>
     </div>
-    <router-view />
+
+    <div class=""><router-view /></div>
+
+    <div class=""></div>
   </div>
 </template>
 
