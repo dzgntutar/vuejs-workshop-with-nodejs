@@ -1,10 +1,10 @@
 <template>
-  <div>Hakkımda</div>
+  <div>Ana Sayfa</div>
 </template>
 
 <script>
 export default {
-  name: "About",
+  name: "homeView",
 };
 </script>
 

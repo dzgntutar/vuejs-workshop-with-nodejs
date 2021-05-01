@@ -1,5 +1,6 @@
-import Anasayfa from "./components/views/Home";
-import Hakkimda from "./components/views/About";
+import Anasayfa from "./components/views/homeView";
+import Hakkimda from "./components/views/aboutView";
+import Kullanici from "./components/views/userView";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -13,6 +14,11 @@ const routes = [
     path: "/about",
     name: "About",
     component: Hakkimda,
+  },
+  {
+    path: "/user",
+    name: "User",
+    component: Kullanici,
   },
 ];
 
