@@ -18,8 +18,8 @@ export default {
     },
   },
   methods: {
-    senToParent(data) {
-      this.$emit("dataFromChild", data);
+    senToParent(name) {
+      this.$emit("dataFromChild", name);
     },
   },
 };
