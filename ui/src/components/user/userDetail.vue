@@ -1,7 +1,7 @@
 <template>
-  <div id="content">
-    <h1>child 2</h1>
-    <h2>User Detail</h2>
+  <div id="content2">
+    <h2>child 2</h2>
+    <h3>User Detail</h3>
   </div>
 </template>
 
@@ -10,7 +10,9 @@ export default {};
 </script>
 
 <style scoped >
-#content {
+#content2 {
   padding: 10px;
+  background-color: burlywood;
+  display: block;
 }
 </style>

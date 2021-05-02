@@ -10,12 +10,8 @@
     </div>
     <br />
     <div class="row">
-      <div class="col-md-6 border border-secondary">
-        <user-list></user-list>
-      </div>
-      <div class="col-md-6 border border-danger">
-        <user-detail></user-detail>
-      </div>
+      <div class="col-md-6"><user-list :parentCount="count"></user-list></div>
+      <div class="col-md-6"><user-detail></user-detail></div>
     </div>
   </div>
 </template>
@@ -48,5 +44,6 @@ export default {
 <style scoped>
 #content {
   padding: 30px;
+  background-color: aqua;
 }
 </style>
