@@ -3,6 +3,8 @@
     <h2>child 1</h2>
     <h3>User List</h3>
     <p>Parent Count : {{ parentCount }}</p>
+    <button @click="senToParent('Düzgün')">Parenta Düzgün Gönder</button>
+    <button @click="senToParent('Ece')">Parenta Ece Gönder</button>
   </div>
 </template>
 
@@ -13,6 +15,11 @@ export default {
       // prop validation
       type: Number,
       required: true,
+    },
+  },
+  methods: {
+    senToParent(data) {
+      this.$emit("dataFromChild", data);
     },
   },
 };

@@ -7,10 +7,17 @@
         {{ "|" }}
         <button class="btn btn-primary" @click="azalt">Azalt</button>
       </div>
+      <hr />
+      <p>Child'dan gelecek değer :{{ childData }}</p>
     </div>
     <br />
     <div class="row">
-      <div class="col-md-6"><user-list :parentCount="count"></user-list></div>
+      <div class="col-md-6">
+        <user-list
+          :parentCount="count"
+          @dataFromChild="childData = $event"
+        ></user-list>
+      </div>
       <div class="col-md-6"><user-detail></user-detail></div>
     </div>
   </div>
@@ -24,6 +31,7 @@ export default {
   data: function () {
     return {
       count: 0,
+      childData: "Ali",
     };
   },
   methods: {
