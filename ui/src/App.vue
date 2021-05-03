@@ -7,10 +7,7 @@
         <router-link to="/user">User</router-link>
       </nav>
     </div>
-
     <div class=""><router-view /></div>
-
-    <div class=""></div>
   </div>
 </template>
 
