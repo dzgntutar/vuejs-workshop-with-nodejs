@@ -2,21 +2,19 @@
   <form @submit.prevent="SaveTodo()">
     <h2 class="text-center">Add Todo</h2>
     <div class="form-group">
-      <label for="title" class="col-sm-2 col-form-label">Title</label>
+      <label class="col-sm-2 col-form-label">Title</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="title" />
+        <input type="text" v-model="todo.title" class="form-control" />
       </div>
     </div>
     <div class="form-group">
-      <label for="description" class="col-sm-2 col-form-label"
-        >Description</label
-      >
+      <label class="col-sm-2 col-form-label">Description</label>
       <div class="col-sm-10">
         <textarea
-          id="description"
           cols="10"
           rows="3"
           class="form-control"
+          v-model="todo.description"
         ></textarea>
       </div>
     </div>
@@ -26,9 +24,23 @@
 </template>
 
 <script>
+const { uid } = require("uid");
+
 export default {
+  data: function () {
+    return {
+      todo: {
+        id: null,
+        title: null,
+        description: null,
+      },
+    };
+  },
   methods: {
-    SaveTodo() {},
+    SaveTodo() {
+      this.todo.id = uid();
+      console.log(this.todo);
+    },
   },
 };
 </script>
