@@ -3,13 +3,14 @@
     <div class="body">
       <div class="col-md-6 offset-md-3">
         <app-todo-form></app-todo-form>
+        <hr />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import todoForm from "../todo/todoForm";
+import todoForm from "../todo/newTodo";
 export default {
   //name: "homeView",
   components: { appTodoForm: todoForm },
