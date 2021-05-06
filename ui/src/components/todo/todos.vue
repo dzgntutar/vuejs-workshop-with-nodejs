@@ -3,5 +3,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    this.emitter.on("newTodoAdded", function (todo) {
+      console.log("todos", todo);
+    });
+  },
+};
 </script>

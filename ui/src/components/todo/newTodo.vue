@@ -39,7 +39,7 @@ export default {
   methods: {
     SaveTodo() {
       this.todo.id = uid();
-      console.log(this.todo);
+      this.emitter.emit("newTodoAdded", this.todo);
     },
   },
 };
