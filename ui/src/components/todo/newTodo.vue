@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="SaveTodo()">
+  <form>
     <h2 class="text-center">Add Todo</h2>
     <div class="form-group">
       <label class="col-sm-2 col-form-label">Title</label>
@@ -19,7 +19,13 @@
       </div>
     </div>
     <br />
-    <button type="submit" class="btn btn-primary btn-sm">Save</button>
+    <button
+      type="submit"
+      class="btn btn-primary btn-sm"
+      @click.prevent="SaveTodo()"
+    >
+      Save
+    </button>
   </form>
 </template>
 
