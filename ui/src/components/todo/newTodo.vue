@@ -33,7 +33,7 @@
 const { uid } = require("uid");
 
 export default {
-  data: function () {
+  data: () => {
     return {
       todo: {
         id: null,
