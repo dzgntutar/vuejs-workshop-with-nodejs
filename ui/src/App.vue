@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
-    <div class="">
-      <nav class="d-flex justify-content-center">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>|
-        <router-link to="/user">User</router-link>
-      </nav>
-    </div>
+  <div class="container col-md-6 col-offset-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <router-link to="/" tag="li"><a>Home</a> </router-link>
+        <router-link to="/about" tag="li"><a>About</a></router-link>
+        <router-link to="/user" tag="li"><a>User</a></router-link>
+      </div>
+    </nav>
     <div class=""><router-view /></div>
   </div>
 </template>

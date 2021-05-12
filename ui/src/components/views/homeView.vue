@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
-    <div class="body">
-      <div class="col-md-6 offset-md-3">
-        <app-todo-form></app-todo-form>
-        <hr />
-        <app-todo-list></app-todo-list>
-      </div>
+  <div class="body">
+    <div class="col-md-6 offset-md-3">
+      <app-todo-form></app-todo-form>
+      <hr />
+      <app-todo-list></app-todo-list>
     </div>
   </div>
 </template>
