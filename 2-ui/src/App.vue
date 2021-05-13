@@ -7,7 +7,7 @@
         <router-link to="/user" tag="li"><a>User</a></router-link>
       </div>
     </nav>
-    <div class=""><router-view /></div>
+    <router-view />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>Hakkımda</div>
+  <h1>Store</h1>
 </template>
 
 <script>
