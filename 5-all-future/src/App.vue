@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <app-header></app-header>
     <app-product-purchase></app-product-purchase>
     <app-footer></app-footer>
