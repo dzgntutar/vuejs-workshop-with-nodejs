@@ -22,11 +22,11 @@ const mutations = {
 const actions = {
   //initApp({}) {},
 
-  addProduct({ commit }, payload) {
+  addProduct({ commit }, product) {
     Vue.http
       .post(
         "https://vuejs-product-app-3e64f-default-rtdb.firebaseio.com/products.json",
-        payload
+        product
       )
       .then((response) => {
         console.log(response);
