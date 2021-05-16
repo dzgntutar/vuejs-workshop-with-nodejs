@@ -1,3 +1,3 @@
-export const updateFooterInfos = (state, duzgun) => {
+export const updateFooterInfos = () => {
   //state.purchase : duzgun.purchase
 };

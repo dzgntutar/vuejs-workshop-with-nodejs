@@ -1,3 +1,5 @@
+import Vue from "vue";
+
 const state = {
   products: [],
 };
@@ -6,7 +8,7 @@ const getters = {
   getProducst(state) {
     return state.products;
   },
-  getProduct(state) {},
+  getProduct() {},
 };
 
 //senkron
@@ -18,10 +20,20 @@ const mutations = {
 
 //async
 const actions = {
-  initApp({ commit }) {},
+  //initApp({}) {},
 
-  addProduct({ commit }, payload) {},
-  sellProduct({ commit }, payload) {},
+  addProduct({ commit }, payload) {
+    Vue.http
+      .post(
+        "https://vuejs-product-app-3e64f-default-rtdb.firebaseio.com/products.json",
+        payload
+      )
+      .then((response) => {
+        console.log(response);
+        console.log(commit);
+      });
+  },
+  //sellProduct({}) {},
 };
 
 export default {
