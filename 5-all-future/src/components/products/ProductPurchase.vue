@@ -49,7 +49,7 @@
             :disabled="isDisabled"
             @click="saveProduct"
           >
-            Kaydet {{ this.product.title.lenght }}
+            Kaydet
           </button>
         </div>
       </div>
