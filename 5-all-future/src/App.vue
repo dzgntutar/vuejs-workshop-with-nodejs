@@ -2,6 +2,7 @@
   <div>
     <app-header></app-header>
     <router-view></router-view>
+    <br /><br />
     <app-footer></app-footer>
   </div>
 </template>
@@ -13,6 +14,10 @@ export default {
   components: {
     appHeader: Header,
     appFooter: Footer,
+  },
+  created() {
+    this.$store.dispatch("initApp");
+    this.$store.dispatch("getFooterInfos");
   },
 };
 </script>

@@ -7,7 +7,7 @@ export const setFooterInfos = ({ state, commit }, FooterInfo) => {
   /* DB yi güncelle */
   let result = {
     purchase: state.purchase,
-    sell: state.sale,
+    sale: state.sale,
   };
   Vue.http
     .put(
@@ -20,5 +20,13 @@ export const setFooterInfos = ({ state, commit }, FooterInfo) => {
 };
 
 export const getFooterInfos = ({ commit }) => {
-  console.log(commit);
+  Vue.http
+    .get(
+      "https://vuejs-product-app-3e64f-default-rtdb.firebaseio.com/trade-result.json"
+    )
+    .then((response) => {
+      //state.purchase = response.body.purchase;
+      //state.sale = response.body.sale;
+      commit("setFooterInfosFirsLoadFromDb", response.body);
+    });
 };
