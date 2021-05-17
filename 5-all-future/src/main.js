@@ -10,6 +10,14 @@ Vue.config.productionTip = false;
 
 Vue.use(VueResource);
 
+Vue.filter("paraformat", (value) => {
+  return (
+    parseFloat(value).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+    }) + " TL"
+  );
+});
+
 new Vue({
   render: (h) => h(App),
   router,

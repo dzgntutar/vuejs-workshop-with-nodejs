@@ -20,13 +20,18 @@ const mutations = {
 
 //async
 const actions = {
-  initApp() {
+  initApp({ commit, state }) {
     Vue.http
       .get(
         "https://vuejs-product-app-3e64f-default-rtdb.firebaseio.com/products.json"
       )
       .then((response) => {
-        console.log(response);
+        if (response.body) {
+          response.body.forEach((product) => {
+            commit("updateProductList", product);
+          });
+        }
+        console.log(state.products);
       });
   },
 
