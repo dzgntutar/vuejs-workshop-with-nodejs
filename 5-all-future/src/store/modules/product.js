@@ -13,7 +13,7 @@ const getters = {
 
 //senkron
 const mutations = {
-  addProduct(state, product) {
+  updateProductList(state, product) {
     state.products.push(product);
   },
 };
@@ -22,15 +22,22 @@ const mutations = {
 const actions = {
   //initApp({}) {},
 
-  addProduct({ commit }, product) {
+  addProduct({ dispatch, commit }, product) {
     Vue.http
       .post(
         "https://vuejs-product-app-3e64f-default-rtdb.firebaseio.com/products.json",
         product
       )
       .then((response) => {
-        console.log(response);
-        console.log(commit);
+        product.id = response.body.name;
+        commit("updateProductList", product);
+
+        let footerInfo = {
+          purchase: product.price,
+          sale: 0,
+          count: product.count,
+        };
+        dispatch("setFooterInfos", footerInfo);
       });
   },
   //sellProduct({}) {},
