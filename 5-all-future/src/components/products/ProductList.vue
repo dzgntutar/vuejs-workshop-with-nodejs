@@ -22,8 +22,13 @@
                   <span class="badge badge-info"> {{ product.id }} </span>
                 </td>
                 <td class="align-middle text-center">{{ product.title }}</td>
-                <td class="align-middle text-center">{{ product.count }}</td>
-                <td style="width: 120px">{{ product.price }}</td>
+                <td
+                  class="align-middle text-center"
+                  :class="countBackground(product.count)"
+                >
+                  {{ product.count }}
+                </td>
+                <td style="width: 120px">{{ product.price | paraformat }}</td>
                 <td class="align-middle">{{ product.description }}</td>
               </tr>
             </tbody>
@@ -46,6 +51,14 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters(["getProducts"]),
+  },
+  methods: {
+    countBackground(count) {
+      return {
+        "text-white bg-danger": count <= 0,
+        "text-white bg-success": count > 0,
+      };
+    },
   },
 };
 </script>
