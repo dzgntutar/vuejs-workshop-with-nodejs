@@ -14,14 +14,14 @@
               <th>Açıklama</th>
             </thead>
             <tbody>
-              <tr>
+              <tr v-for="product in getProducts" :key="product.id">
                 <td class="align-middle text-center">
-                  <span class="badge badge-info"> E564fghdE563df </span>
+                  <span class="badge badge-info"> {{ product.id }} </span>
                 </td>
-                <td class="align-middle text-center">Deneme</td>
-                <td class="align-middle text-center">1</td>
-                <td style="width: 120px">10,000</td>
-                <td class="align-middle">Örnek Açıklama</td>
+                <td class="align-middle text-center">{{ product.title }}</td>
+                <td class="align-middle text-center">{{ product.count }}</td>
+                <td style="width: 120px">{{ product.price }}</td>
+                <td class="align-middle">{{ product.description }}</td>
               </tr>
             </tbody>
           </table>
@@ -37,3 +37,12 @@
     </div>
   </div>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["getProducts"]),
+  },
+};
+</script>

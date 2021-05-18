@@ -6,20 +6,20 @@ const state = {
 };
 
 const getters = {
-  getProducst(state) {
+  getProducts(state) {
     return state.products;
   },
   getProduct() {},
 };
 
-//senkron
+//senkron*****************************
 const mutations = {
   updateProductList(state, product) {
     state.products.push(product);
   },
 };
 
-//async
+//async*******************************
 const actions = {
   initApp({ state }) {
     Vue.http
