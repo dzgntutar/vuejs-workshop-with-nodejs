@@ -1,4 +1,5 @@
 import Vue from "vue";
+import { router } from "../../router";
 
 const state = {
   products: [],
@@ -51,6 +52,8 @@ const actions = {
           count: product.count,
         };
         dispatch("setFooterInfos", footerInfo);
+
+        router.replace("/");
       });
   },
   //sellProduct({}) {},
