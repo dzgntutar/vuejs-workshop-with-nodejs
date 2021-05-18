@@ -9,12 +9,11 @@ const getters = {
   getProducts(state) {
     return state.products;
   },
-  getProduct() {},
 };
 
 //senkron*****************************
 const mutations = {
-  updateProductList(state, product) {
+  addProductToList(state, product) {
     state.products.push(product);
   },
 };
@@ -30,7 +29,7 @@ const actions = {
         let data = response.body;
         for (let key in data) {
           data[key].id = key;
-          commit("updateProductList", data[key]);
+          commit("addProductToList", data[key]);
         }
       });
   },
@@ -43,7 +42,7 @@ const actions = {
       )
       .then((response) => {
         product.id = response.body.name;
-        commit("updateProductList", product);
+        commit("addProductToList", product);
 
         let footerInfo = {
           purchase: product.price,
