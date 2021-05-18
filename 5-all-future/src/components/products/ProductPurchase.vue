@@ -84,5 +84,21 @@ export default {
       );
     },
   },
+  beforeRouteLeave(to, from, next) {
+    if (
+      this.product.title.length > 0 ||
+      this.product.count > 0 ||
+      this.product.price > 0 ||
+      this.product.description.length > 0
+    ) {
+      if (
+        confirm(
+          "Kaydedilmemiş değişiklkleriniz var! Çıkış yapmak istediğine emin misin?"
+        )
+      )
+        next();
+      else next(false);
+    } else next();
+  },
 };
 </script>
