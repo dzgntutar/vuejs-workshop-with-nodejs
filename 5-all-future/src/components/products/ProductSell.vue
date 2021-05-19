@@ -12,7 +12,9 @@
               v-model="selectedProduct"
               @change="productChanged"
             >
+              <option disabled>Lütfen ürün seçiniz..</option>
               <option
+                :disabled="product.count == 0"
                 :value="product.id"
                 v-for="product in getProducts"
                 :key="product.id"
