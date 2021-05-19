@@ -60,7 +60,27 @@ const actions = {
         router.replace("/");
       });
   },
-  //sellProduct({}) {},
+  sellProduct({ state }, payload) {
+    let product = state.products.find((p) => {
+      return p.id == payload.id;
+    });
+
+    if (product) {
+      let diffrence = product.count - payload.sellCount;
+
+      Vue.http
+        .patch(
+          "https://vuejs-product-app-3e64f-default-rtdb.firebaseio.com/products/" +
+            payload.id +
+            ".json",
+          { count: diffrence }
+        )
+        .then((response) => {
+          product.count = diffrence;
+          console.log(response);
+        });
+    }
+  },
 };
 
 export default {
