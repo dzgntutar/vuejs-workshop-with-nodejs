@@ -21,25 +21,27 @@
               </option>
             </select>
           </div>
-          <div class="card mb-2 border border-danger" v-if="product">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-12 text-center">
-                  <div class="mb-3">
-                    <span class="badge badge-info"
-                      >Stok : {{ product.count }}</span
-                    >
-                    <span class="badge badge-primary"
-                      >Fiyat : {{ product.price | paraformat }}</span
-                    >
+          <transition name="fade" mode="out-in">
+            <div class="card mb-2 border border-danger" v-if="product">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <div class="mb-3">
+                      <span class="badge badge-info"
+                        >Stok : {{ product.count }}</span
+                      >
+                      <span class="badge badge-primary"
+                        >Fiyat : {{ product.price | paraformat }}</span
+                      >
+                    </div>
+                    <p class="border border-warning p-2 text-secondary">
+                      {{ product.description }}
+                    </p>
                   </div>
-                  <p class="border border-warning p-2 text-secondary">
-                    {{ product.description }}
-                  </p>
                 </div>
               </div>
             </div>
-          </div>
+          </transition>
           <div class="form-group">
             <label>Adet</label>
             <input
