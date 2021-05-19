@@ -60,7 +60,7 @@ const actions = {
         router.replace("/");
       });
   },
-  sellProduct({ state }, payload) {
+  sellProduct({ state, dispatch }, payload) {
     let product = state.products.find((p) => {
       return p.id == payload.id;
     });
@@ -76,8 +76,17 @@ const actions = {
           { count: diffrence }
         )
         .then((response) => {
-          product.count = diffrence;
+          product.count = diffrence; //reference type
           console.log(response);
+
+          let footerInfo = {
+            purchase: 0,
+            sale: product.price,
+            count: payload.sellCount,
+          };
+          dispatch("setFooterInfos", footerInfo);
+
+          router.replace("/");
         });
     }
   },
