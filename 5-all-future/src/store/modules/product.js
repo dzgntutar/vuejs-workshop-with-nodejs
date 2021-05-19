@@ -9,6 +9,12 @@ const getters = {
   getProducts(state) {
     return state.products;
   },
+  getProductWithId(state) {
+    return (id) =>
+      state.products.find((p) => {
+        return p.id == id;
+      });
+  },
 };
 
 //senkron*****************************
