@@ -76,7 +76,7 @@ export default {
     ...mapGetters(["getProducts"]),
     sellCountControl: function () {
       return {
-        "form-control border-danger text-danger disabled":
+        "form-control bg-danger text-white":
           this.product?.count < this.sellCount,
         "form-control":
           this.product == null || this.product?.count >= this.sellCount,
