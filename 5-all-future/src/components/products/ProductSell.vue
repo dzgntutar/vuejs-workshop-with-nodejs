@@ -48,7 +48,6 @@
             <label>Adet</label>
             <input
               type="number"
-              class=""
               placeholder="Ürün adetini giriniz.."
               v-model="sellCount"
               :class="sellCountControl"
@@ -76,9 +75,9 @@ export default {
     ...mapGetters(["getProducts"]),
     sellCountControl: function () {
       return {
-        "form-control bg-danger text-white":
+        "form-control shadow-none bg-danger text-white":
           this.product?.count < this.sellCount,
-        "form-control":
+        "form-control shadow-none":
           this.product == null || this.product?.count >= this.sellCount,
       };
     },
